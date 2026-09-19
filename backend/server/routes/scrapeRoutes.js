@@ -4,6 +4,8 @@ const { scrapeAllTrackedProducts } = require("../services/scrapeManager");
 
 const router = express.Router();
 
+let scrapeRunning = false;
+
 function asyncRoute(handler) {
   return (req, res, next) =>
     Promise.resolve(handler(req, res, next)).catch(next);
@@ -30,9 +32,31 @@ router.post(
       );
     }
 
-    const summary = await scrapeAllTrackedProducts();
+    if (scrapeRunning) {
+      return res.status(409).json({
+        ok: false,
+        error: "A scheduled scrape is already running.",
+      });
+    }
 
-    res.json(summary);
+    scrapeRunning = true;
+
+    res.status(202).json({
+      ok: true,
+      status: "started",
+      message: "Scheduled scrape started.",
+    });
+
+    scrapeAllTrackedProducts()
+      .then((summary) => {
+        console.log("Scheduled scrape finished:", summary);
+      })
+      .catch((error) => {
+        console.error("Scheduled scrape failed:", error);
+      })
+      .finally(() => {
+        scrapeRunning = false;
+      });
   })
 );
 
