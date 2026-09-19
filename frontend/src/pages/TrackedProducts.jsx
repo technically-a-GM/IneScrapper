@@ -80,6 +80,7 @@ function TrackedProducts({
               <div className="trackedMain">
                 <div>
                   <h3>{product.name}</h3>
+
                   <p>
                     {product.brand || "Unknown brand"}
                     {" · "}
@@ -91,6 +92,7 @@ function TrackedProducts({
 
                 <div className="priceBlock">
                   <strong>{priceLabel(product.currentPrice)}</strong>
+
                   <span>
                     {hasHistory
                       ? product.currentStockText
@@ -169,7 +171,7 @@ function TrackedProducts({
                     <Monitor size={18} />
                   )}
 
-                  Headed Scrape
+                  Headed Demo
                 </button>
 
                 <button
@@ -181,6 +183,10 @@ function TrackedProducts({
                   View Details
                 </button>
               </div>
+
+              <p className="headedNote">
+                Opens a visible browser for the local scraper demo.
+              </p>
             </article>
           );
         })}

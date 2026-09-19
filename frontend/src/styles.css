@@ -674,3 +674,9 @@ th {
     flex-wrap: wrap;
   }
 }
+
+.headedNote {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
