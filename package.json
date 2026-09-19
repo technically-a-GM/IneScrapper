@@ -1,0 +1,22 @@
+{
+  "name": "ine-price-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "INE mock storefront price tracker",
+  "main": "backend/server/server.js",
+  "scripts": {
+    "start": "node backend/server/server.js",
+    "dev:server": "node backend/server/server.js",
+    "dev:client": "npm --prefix frontend run dev",
+    "build:client": "npm --prefix frontend run build",
+    "lint:client": "npm --prefix frontend run lint",
+    "test:api": "node backend/scripts/test-api.js",
+    "test:db": "node backend/scripts/test-db-layer-738.js",
+    "test:scraper": "node test-scrape-738.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "playwright": "^1.63.0"
+  }
+}
