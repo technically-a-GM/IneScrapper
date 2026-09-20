@@ -69,7 +69,7 @@ The application allows users to search products from the INE mock storefront, tr
              |
              v
        INE Mock Store
-
+```
 
 How It Works
 1. Product Search
