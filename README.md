@@ -8,7 +8,7 @@ The application allows users to search products from the INE mock storefront, tr
 
 - **Frontend:** https://ine-scrapper.vercel.app
 - **Backend:** https://inescrapper.onrender.com
-- **GitHub:** Add your repository link here
+- **GitHub:** https://github.com/technically-a-GM/IneScrapper.git
 
 ## Features
 
